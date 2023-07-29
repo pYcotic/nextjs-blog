@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap');
+
+
+@value dark-olive-green: #5F6F52;
+@value text-color: #A9B388;
+
+
+.navbarWrapper {
+	height: 92px;
+}
+
+.navbar {
+	background-color: dark-olive-green;
+	height: 92px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.logo {
+	color: text-color;
+	font-family: "Cascadia Code", sans-serif;
+	font-size: 40px;
+	font-weight: 400;
+	position: fixed;
+	left: 3rem;
+}
+
+.links {
+	position: fixed;
+	right: 7rem;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.divWrapper {
+	height: 68px;
+	position: relative;
+	width: 190px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.divWrapper:hover {
+	background-color: #783D19;
+}
+
+.textWrapper {
+	color: text-color;
+	/* font-family: "Cascadia Code", sans-serif; */
+	font-size: 24px;
+	font-weight: 400;
+	/* height: 68px;
+	left: 0;
+	letter-spacing: 0;
+	line-height: normal; */
+	position: absolute;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.burgerMenu {
+	display: none;
+}
+
+
+@media only screen and (max-width: 1355px) {
+
+	.logo {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.links {
+		display: none;
+	}
+
+	.burgerMenu {
+		display: flex;
+		position: fixed;
+		/* right: 0; */
+		top: 0;
+		margin: 1.5rem 0 0 1rem;
+	}
+
+	.menuWrapper {
+		position: relative;
+		background-color: dark-olive-green;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+
+
+	.dropMenu {
+		display: none;
+	}
+
+	.openDropMenu {
+		position: fixed;
+		top: 92px;
+		right: 0;
+		left: 0;
+		background-color: dark-olive-green;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.divWrapper {
+		height: 68px;
+		position: relative;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.logo {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.links {
+		display: none;
+	}
+
+	.burgerMenu {
+		display: flex;
+		position: fixed;
+		top: 0;
+		margin: 1.5rem 0 0 1rem;
+	}
+
+	.menuWrapper {
+		position: relative;
+		background-color: dark-olive-green;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	
+	
+	.dropMenu {
+		display: none;
+	}
+
+	.openDropMenu {
+		position: fixed;
+		top: 92px;
+		right: 0;
+		left: 0;
+		background-color: dark-olive-green;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.divWrapper {
+		height: 68px;
+		position: relative;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+}
+
+

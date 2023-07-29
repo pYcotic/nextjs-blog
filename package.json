@@ -3,9 +3,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:css": "postcss styles/*.css -d build/styles"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
@@ -13,5 +17,10 @@
     "react-dom": "18.2.0",
     "remark": "^14.0.3",
     "remark-html": "^15.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "@types/react": "18.2.17",
+    "typescript": "5.1.6"
   }
 }

@@ -1,11 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap');
+
+:root {
+	--dark-olive-green: #5F6F52;
+	--laural-green: #A9B388;
+	--cornsilk-var: #FEFAE0;
+	--lemon-meringue: #FDEBC7;
+	--camel: #B99470;
+	--alloy-orange: #C4661F;
+	--russet: #783D19;
+}
+
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+	font-family: Cascadia Code, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
 		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	line-height: 1.6;
 	font-size: 18px;
+	background-color: var(--lemon-meringue);
 }
 
 * {
@@ -13,7 +26,7 @@ body {
 }
 
 a {
-	color: #0070f3;
+	color: var(--alloy-orange);
 	text-decoration: none;
 }
 
