@@ -15,7 +15,7 @@ export default function Post({
 	}
 }) {
 	return (
-		<Layout destination='Posts'>
+		<Layout>
 			<Title>
 				{postData.title}
 			</Title>
