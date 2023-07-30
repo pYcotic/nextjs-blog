@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap');
+@font-face {
+	font-family: "Cascadia Code", sans-serif;
+	src: url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap') format("woff2");
+}
 
 :root {
 	--dark-olive-green: #5F6F52;
@@ -19,6 +22,7 @@ body {
 	line-height: 1.6;
 	font-size: 18px;
 	background-color: var(--lemon-meringue);
+	color: var(--russet);
 }
 
 * {
@@ -37,4 +41,8 @@ a:hover {
 img {
 	max-width: 100%;
 	display: block;
+}
+
+a.__next {
+	text-decoration: none;
 }

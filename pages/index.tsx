@@ -1,15 +1,15 @@
 import Title from '../components/title'
 import Layout from '../components/layout'
-import { siteTitle } from '../lib/constants'
-import About from '../components/about'
+import { name } from '../lib/constants'
+import Homepage from '../components/home'
 
 export default function Home() {
   return (
     <Layout home>
       <Title>
-        {siteTitle} 
+        {name} 
       </Title>
-      <About />
+      <Homepage />
     </Layout>
   )
 }

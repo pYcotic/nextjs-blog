@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code&display=swap'); */
+
 
 
 @value dark-olive-green: #5F6F52;
@@ -23,12 +24,13 @@
 }
 
 .logo {
-	color: text-color;
+	color: dark-olive-green;
 	font-family: "Cascadia Code", sans-serif;
 	font-size: 40px;
 	font-weight: 400;
 	position: fixed;
 	left: 3rem;
+	text-decoration: none;
 
 		@media only screen and (max-width: 1355px) {		
 				position: relative;
@@ -123,6 +125,7 @@
 .burgerMenu {
 	display: none;
 }
+
 
 
 @media only screen and (max-width: 1355px) {

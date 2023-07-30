@@ -1,6 +1,7 @@
 import React from "react";
-import Title from "../../components/title";
 import Layout from "../../components/layout";
+import Head from "next/head";
+import { siteTitle } from "../../lib/constants";
 
 import { getSortedPostsData } from '../../lib/posts'
 import { GetStaticProps } from 'next'
@@ -13,11 +14,13 @@ interface PostProps {
 		id: string
 	}[]
 }
-
+// export default function Posts() {
 export default function Posts( { allTestimonialData }: PostProps) {
 	return (
 		<Layout>
-			<Title>Testimonials</Title>
+			<Head>
+				<title>{siteTitle} - Testimonials</title>
+			</Head>
 			<h1>Testimonials</h1>
 			<ul>
 				{allTestimonialData.map(({ id, date, title }) => (

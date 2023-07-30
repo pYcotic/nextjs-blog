@@ -1,9 +1,66 @@
 .container {
-	max-width: 36rem;
 	padding: 0 1rem;
 	margin: 3rem auto 6rem;
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr 1fr;
+	grid-template-rows: minmax(100px, auto);
+	grid-gap: 1.5rem;
+	position: relative;
+	top: 46px;
+	justify-content: space-around;
+
 }
 
+.leftContainer {
+	grid-column: 1 / 2;
+	max-width: 22.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 1rem;
+	padding: 1rem 0;
+}
+
+.leftContainerHome {
+	grid-column: 1 / -1;
+	justify-content: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.centerContainer {
+	max-width: 36rem;
+	grid-column: 2 / 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.centerContainerHome {
+	grid-column: 1 / -1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.rightContainer {
+	max-width: 18rem;
+	grid-column: 4;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.rightContainerHome {
+	grid-column: 1 / -1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
 
 .backToHome {

@@ -1,6 +1,8 @@
+import styles from "../styles/layout.module.css"
+
 import React from "react";
 
-export default function About(): JSX.Element {
+export default function Homepage(): JSX.Element {
 	return (
 		<p>
 			Hello World, My name is Marco, I am a student at Goldsmiths University Of London.

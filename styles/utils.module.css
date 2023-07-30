@@ -48,5 +48,6 @@
 }
 
 .lightText {
-	color: #666;
+	color: var(--laural-green);
 }
+

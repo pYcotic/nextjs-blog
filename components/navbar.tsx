@@ -25,7 +25,7 @@ export default function Navbar(): JSX.Element {
   
   
   return (
-      <div className={styles.navbarWrapper}>
+      // <div className={styles.navbarWrapper}>
         <div className={styles.navbar}>
         <Link href='/' className={styles.logo}>MARCOJS</Link>
           <div className={styles.links}>
@@ -40,6 +40,6 @@ export default function Navbar(): JSX.Element {
             </nav>
           </section>
         </div>
-      </div>
+      // </div>
   );
 };

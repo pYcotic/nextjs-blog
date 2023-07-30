@@ -1,17 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./profile.module.css";
+import styles from "../styles/layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import { name } from "../lib/constants";
 
-interface NavLinkProps {
-	  href: string;
-	  children: React.ReactNode;
-}
-
-export default function Profile({ href, children }: NavLinkProps): JSX.Element {
+export default function Profile( { home }: { home?:boolean }): JSX.Element {
 	return (
-		<div className={styles.imageWrpper}>
+		<div className={home ? styles.leftContainerHome : styles.leftContainer}>
+
 			<Image
 				priority
 				src="/images/profile.jpg"
@@ -20,7 +16,7 @@ export default function Profile({ href, children }: NavLinkProps): JSX.Element {
 				width={144}
 				alt={name}
 			/>
-			<h1 className={utilStyles.heading2Xl}>{name}</h1>
+			<h1 className={utilStyles.headingXl}>{name}</h1>
 		</div>
 	)
 }
