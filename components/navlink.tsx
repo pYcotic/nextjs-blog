@@ -5,12 +5,13 @@ import styles from "../styles/navbar.module.css";
 interface NavLinkProps {
 	  href: string;
 	  children: React.ReactNode;
+	  onClick?: () => void;
 }
 
-export default function NavLink({ href, children }: NavLinkProps): JSX.Element {
+export default function NavLink({ href, children, onClick }: NavLinkProps): JSX.Element {
 	return (
 		<div className={styles.divWrapper}>
-			<Link href={href} className={styles.textWrapper}>
+			<Link onClick={onClick} href={href} className={`${styles.textWrapper} ${styles.offset}`}>
 				{children}
 			</Link>
 		</div>

@@ -4,7 +4,7 @@ import { siteTitle } from '../lib/constants';
 
 
 
-export default function Title({ children }: { children: React.ReactNode }): JSX.Element {
+export default function Title({ children }: { children: string }): JSX.Element {
 	return (
 		<Head>
 			<title>{siteTitle} - {children}</title>

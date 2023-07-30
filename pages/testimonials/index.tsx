@@ -6,24 +6,24 @@ import { getSortedPostsData } from '../../lib/posts'
 import { GetStaticProps } from 'next'
 import Link from "next/link";
 
-export default function Posts({
-	allPostsData
-}: {
-	allPostsData: {
+interface PostProps {
+	allTestimonialData: {
 		date: string
 		title: string
 		id: string
 	}[]
-}) {
+}
+
+export default function Posts( { allTestimonialData }: PostProps) {
 	return (
 		<Layout>
-			<Title>Posts</Title>
-			<h1>Posts</h1>
+			<Title>Testimonials</Title>
+			<h1>Testimonials</h1>
 			<ul>
-				{allPostsData.map(({ id, date, title }) => (
+				{allTestimonialData.map(({ id, date, title }) => (
 					<li key={id}>
-						<Link href={`/posts/${id}`}>
-						{title}
+						<Link href={`/tetimonials/${id}`}>
+							{title}
 						</Link>
 						<br />
 						{id}
@@ -37,10 +37,10 @@ export default function Posts({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const allPostsData = getSortedPostsData()
+	const allTestimonialData = getSortedPostsData()
 	return {
 		props: {
-			allPostsData
+			allTestimonialData
 		}
 	}
 }

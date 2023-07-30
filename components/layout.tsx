@@ -1,14 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/layout.module.css'
-import Link from 'next/link'
 import Navbar from './navbar'
 import { siteTitle } from '../lib/constants'
-import Header from './header'
 
 export const name = ' Marco J. Slabbert'
 export default function Layout({
 	children,
-	destination,
 	home
 }: {
 	children: React.ReactNode,
