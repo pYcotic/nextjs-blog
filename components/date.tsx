@@ -1,6 +1,8 @@
-import { parseISO, format } from 'date-fns'
+import { parseISO, formatDistanceToNow } from 'date-fns'
 
-export default function Date({ dateString }: { dateString: string }) {
-	const date = parseISO(dateString)
-	return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
+export default function TimeAgo({ dateString }: { dateString: string }) {
+  const date = parseISO(dateString)
+  const timeAgo = formatDistanceToNow(date, { addSuffix: true })
+
+  return <span>{timeAgo}</span>
 }

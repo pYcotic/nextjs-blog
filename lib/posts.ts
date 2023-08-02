@@ -23,7 +23,7 @@ export function getSortedPostsData() {
 		// Combine the data with the id
 		return {
 			id,
-			...(matterResult.data as { date: string; title: string })
+			...(matterResult.data as { date: string; title: string; image: string })
 		}
 	})
 	// Sort posts by date
@@ -47,6 +47,37 @@ export function getAllPostIds() {
 	})
 }
 
+// export async function getPostData(id: string) {
+// 	const fullPath = path.join(postsDirectory, `${id}.md`)
+// 	const fileContents = fs.readFileSync(fullPath, 'utf8')
+
+// 	// Use gray-matter to parse the post metadata section
+// 	const matterResult = matter(fileContents)
+
+// 	// Use remark to convert markdown into HTML string
+// 	const processedContent = await remark()
+// 		.use(html)
+// 		.use(() => {
+// 			return (tree) => {
+// 				tree.children.forEach((node) => {
+// 					if (node.type === 'element' && node.tagName === 'img') {
+// 						const src = node.properties.src as string
+// 						node.properties.src = `/images/posts/${id}/${src}`
+// 					}
+// 				})
+// 			}
+// 		})
+// 		.process(matterResult.content)
+// 	const contentHtml = processedContent.toString()
+
+// 	// Combine the data with the id and contentHtml
+// 	return {
+// 		id,
+// 		contentHtml,
+// 		...(matterResult.data as { date: string; title: string })
+// 	}
+// }
+
 export async function getPostData(id: string) {
 	const fullPath = path.join(postsDirectory, `${id}.md`)
 	const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -58,12 +89,18 @@ export async function getPostData(id: string) {
 	const processedContent = await remark()
 		.use(html)
 		.process(matterResult.content)
-	const contentHtml = processedContent.toString()
+	let contentHtml = processedContent.toString()
+
+	// Find and modify image tags in the HTML output
+	const imageRegex = /<img.*?src="(.*?)".*?alt="(.*?)".*?>/g
+	contentHtml = contentHtml.replace(imageRegex, (match, src, alt) => {
+		return `<img src="${src}" alt="${alt}" />`
+	})
 
 	// Combine the data with the id and contentHtml
 	return {
 		id,
 		contentHtml,
-		...(matterResult.data as { date: string; title: string })
+		...(matterResult.data as { date: string; title: string; image: string })
 	}
 }

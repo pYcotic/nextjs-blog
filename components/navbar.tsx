@@ -39,6 +39,7 @@ export default function Navbar(): JSX.Element {
               </nav>
             </nav>
           </section>
+          
         </div>
       // </div>
   );
