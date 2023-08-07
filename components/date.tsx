@@ -1,8 +1,13 @@
 import { parseISO, formatDistanceToNow } from 'date-fns'
 
-export default function TimeAgo({ dateString }: { dateString: string }) {
+interface TimeAgoProps {
+  dateString: string;
+  className?: string;
+}
+
+export default function TimeAgo({ dateString, className }: TimeAgoProps) {
   const date = parseISO(dateString)
   const timeAgo = formatDistanceToNow(date, { addSuffix: true })
 
-  return <span>{timeAgo}</span>
+  return <span className={className}>{timeAgo}</span>
 }

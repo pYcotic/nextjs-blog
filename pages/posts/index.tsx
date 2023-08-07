@@ -15,7 +15,7 @@ export default function Posts({
 		date: string
 		title: string
 		id: string
-		img: string
+		image: string
 	}[]
 }) {
 	return (
@@ -23,18 +23,19 @@ export default function Posts({
 			<Title>Posts</Title>
 			<h1 className={styles.heading}>Posts</h1>
 			<ul>
-				{allPostsData.map(({ id, date, title, img }) => (
-
-						<li key={id}>
-						<Link href={`/posts/${id}`}>
-							<img src={img} alt={title} />
-							<h2>{title}</h2>
-							<p>{`${id}`}</p>
-
-							<Date dateString={date} />
-						</Link>
-
+				{allPostsData.map(({ id, date, title, image }) => (
+					<Link href={`/posts/${id}`}>
+						<li className={styles.liPost} key={id}>
+								<div className={styles.divImage}>
+									<img className={styles.imagePost} src={image} alt={title} />
+								</div>
+								<div className={styles.divData}>
+									<h2 className={styles.h2Post}>{title}</h2>
+									<p className={styles.pPost}>{`${id}`}</p>
+									<Date className={styles.datePost} dateString={date} />
+								</div>
 						</li>
+					</Link>
 				))}
 			</ul>
 		</Layout>

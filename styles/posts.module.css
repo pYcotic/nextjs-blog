@@ -3,5 +3,31 @@
 	font-weight: bold;
 	margin: 1rem 0;
 	color: var(--dark-olive-green);
+}
 
+.liPost {
+	list-style: none;
+	padding: 0.5rem;
+	margin: 0.5rem 0;
+	border: 1px solid var(--dark-green-olive);
+	background-color: var(--cornsilk-var);
+	border-radius: 7px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+	display: flex;
+	position: relative;
+}
+.divImage {
+	position: absolute;
+	left: -0.5rem;
+}
+
+.divData {
+	margin-left: 9rem;
+}
+
+.imagePost {
+	width: 9rem;
+	height: 9rem;
+	border-radius: 7px;
+	border: 1px solid var(--dark-green-olive);
 }

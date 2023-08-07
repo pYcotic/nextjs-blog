@@ -46,12 +46,12 @@
 
 }
 
-.centerContainer a li {
+/* .centerContainer a li {
 	margin: 0 1.5rem;
 	padding: 0;
-}
+} */
 
-.centerContainer ul li {
+/* .centerContainer ul li {
 	list-style: none;
 	padding: 0 0.5rem;
 	margin: 0;
@@ -59,22 +59,22 @@
 	background-color: var(--cornsilk-var);
 	border-radius: 7px;
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-}
+} */
 
-.centerContainer li {
+/* .centerContainer li {
 	margin: 0;
 	padding: 0;
-}
+} */
 
-.centerContainer a li {
+/* .centerContainer a li {
 	font-size: 2rem;
 	text-decoration: none;
 	color: var(--dark-green-olive);
-}
+} */
 
-.date {
+/* .date {
 	text-decoration: underline;
-}
+} */
 
 .centerContainerHome {
 	grid-column: 1 / -1;
