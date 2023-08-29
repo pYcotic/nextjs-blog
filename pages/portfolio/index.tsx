@@ -11,21 +11,13 @@ export default function Portfolio() {
 		setFilter(c);
 	};
 
-
-	
 	return (
 		<Layout>
 			<Title>Portfolio</Title>
 			<h1>Portfolio</h1>
 			<div className={styles.portfolioDiv}>
 				<h2>PORTFOLIO</h2>
-				<div id="myBtnContainer">
-					<button className="btn active" onClick={() => filterSelection('all')}> Show all</button>
-					<button className="btn" onClick={() => filterSelection('nature')}> Nature</button>
-					<button className="btn" onClick={() => filterSelection('cars')}> Cars</button>
-					<button className="btn" onClick={() => filterSelection('people')}> People</button>
-				</div>
-				<PortfolioBox />
+			  <PortfolioBox />
 			</div>
 		</Layout>
 	);
