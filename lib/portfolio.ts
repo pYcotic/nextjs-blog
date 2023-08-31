@@ -2,61 +2,50 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
-import html from 'remark-html'
+// import html from 'remark-html'
 
 const portfolioDirectory = path.join(process.cwd(), '_portfolio')
 
-export function getSortedPortfolioData() {
+// i want to create a list of folder names in the portfolio directory
+// then take the list and search each folder to list its contents
+
+interface Portfolio {
+	id: string;
+	description: string;
+	images: string[];
+}
+
+export function getPortfolioList(): Portfolio[] {
 	const folderNames = fs.readdirSync(portfolioDirectory);
-	const allPortfolioData = folderNames.map(folderName => {
-		const id = folderName;
-		const fullPath = path.join(portfolioDirectory, folderName, 'index.md')
-		const fileContents = fs.readFileSync(fullPath, 'utf8')
-		const matterResult = matter(fileContents)
-		return {
-			id,
-			...(matterResult.data as { title: string })
+	const portfolioItems: Portfolio[] = [];
+
+	folderNames.forEach(folderName => {
+		const folderPath = path.join(portfolioDirectory, folderName);
+		try {
+			const fileContent = fs.readFileSync(path.join(folderPath, 'index.md'), 'utf-8');
+			
+			const { data, content } = matter(fileContent);
+			const { title } = data;
+
+			const description = content;
+
+			const imageFiles = fs.readdirSync(folderPath).filter((fileName) => {
+				return fileName.match(/\.jpg$/);
+			})
+
+			const images = imageFiles.map((fileName) => {
+				return path.join(folderPath, fileName);
+			});
+
+			portfolioItems.push({
+				id: folderName,
+				title,
+				description,
+				images
+			});
+		} catch (e) {
+			console.error(`Error reading files in ${folderPath}`, e);
 		}
-	}
-
-	)
-	return allPortfolioData.sort((a, b) => {
-		if (a.title < b.title) {
-			return 1
-		} else {
-			return -1
-		}
-	}
-	)
-}
-
-export function getAllPortfolioIds() {
-	const folderNames = fs.readdirSync(portfolioDirectory)
-	return folderNames.map(folderName => {
-		return {
-			params: {
-				id: folderName
-			}
-		}
-	})
-}
-
-export async function getPortfolioData(id: string) {
-	const fullPath = path.join(portfolioDirectory, id, 'index.md');
-	const fileContents = fs.readFileSync(fullPath, 'utf8');
-	const matterResult = matter(fileContents);
-	const processedContent = await remark()
-		.use(html)
-		.process(matterResult.content)
-	let discription = processedContent.toString()
-
-	// get image
-	const imagePath = path.join(portfolioDirectory, id, 'image.jpg');
-
-	return {
-		id,
-		discription,
-		imagePath,
-		...(matterResult.data as { title: string })
-	}
+	});
+	return portfolioItems;
 }

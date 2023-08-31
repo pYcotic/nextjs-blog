@@ -2,23 +2,33 @@ import React, { useState } from "react";
 import Layout from "../../components/layout";
 import Title from "../../components/title";
 import styles from "../../styles/portfolio.module.css"
-import PortfolioBox from "../../components/portfolioBox";
+import { getPortfolioList } from "../../lib/portfolio";
 
-export default function Portfolio() {
-	const [filter, setFilter] = useState("all");
+interface PortfolioProps {
+	portfolioList: { id: string; title: string}[];
+}
 
-	const filterSelection = (c: string): void => {
-		setFilter(c);
-	};
-
+export default function Portfolio({ portfolioList }: PortfolioProps) {
 	return (
 		<Layout>
 			<Title>Portfolio</Title>
 			<h1>Portfolio</h1>
 			<div className={styles.portfolioDiv}>
 				<h2>PORTFOLIO</h2>
-			  <PortfolioBox />
+				{portfolioList.map((portfolio) => (
+					<p key={portfolio.id}>{portfolio.title}</p>
+				))}
+			  {/* <PortfolioBox /> */}
 			</div>
 		</Layout>
 	);
+}
+
+export async function getStaticProps() {
+	const portfolioList = getPortfolioList();
+	return {
+		props: {
+			portfolioList,
+		},
+	};
 }
