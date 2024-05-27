@@ -1,9 +1,0 @@
-
-{
-  // Other settings...
-  "css.validate": true,
-  "css.lint.unknownAtRules": "ignore",
-  "css.customData": {
-    "atDirectives": ["@value"]
-  }
-}
