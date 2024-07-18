@@ -6,18 +6,12 @@ import Navbar from "./components/navigation/navbar";
 export default function Home() {
 	return (
 		<main className={styles.main}>
-			<Navbar />
 			<h1>Portfolio of Marco J. SLabbert</h1>
 			<Image
 				src={profilePic}
 				alt="Profile Picture"
 				sizes="20vw"
-				style={{
-					width: "40%",
-					height: "auto",
-					borderRadius: "50%",
-					margin: "0 auto",
-				}}
+				className={styles.profile}
 			/>
 			<br />
 			<p>What I am currently doing:</p>

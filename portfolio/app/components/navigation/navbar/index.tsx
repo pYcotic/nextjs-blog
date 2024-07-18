@@ -1,24 +1,24 @@
 import React from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-import Button from "./Button";
+// import Button from "./Button";
+import styles from "./index.module.css";
 
 const Navbar = () => {
 	return (
 		<>
-			<div className="w-full h-20 bg-emerald-800 sticky top-0">
-				<div className="container mx-auto px-4 h-fill">
-					<div className="flex justify-between items-center h-full">
+			<div className={styles.navbar}>
+				<div className={styles.container}>
+					<div className={styles.flex_box}>
 						<Logo />
-						<ul className="hidden md:flex gap-x-6 text-white">
+						<ul className={styles.links}>
 							<li>
 								<Link href="/Hackathons">Hackathons</Link>
 							</li>
 							<li>
-								<Link href="/Projects">Hackathons</Link>
+								<Link href="/Projects">Projects</Link>
 							</li>
 						</ul>
-						<Button />
 					</div>
 				</div>
 			</div>
