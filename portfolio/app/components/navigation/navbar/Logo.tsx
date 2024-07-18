@@ -5,7 +5,7 @@ const Logo = () => {
 	return (
 		<>
 			<Link href="/" >
-				<p>Marco Jonathan Slabbert "aka - pYcotic"</p>
+				<p>Marco Jonathan Slabbert aka - pYcotic</p>
 			</Link>
 		</>
 	);
