@@ -1,0 +1,16 @@
+.container {
+	background-color: red;
+	width: 900px;
+	height: 300px;
+	margin: 10px;
+	padding: 25px;
+	display: flex;
+	flex-direction: row;
+}
+
+.item {
+	background-color: blue;
+	width: 200px;
+	height: 200px;
+	margin: 25px;
+}

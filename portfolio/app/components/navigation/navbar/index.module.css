@@ -1,8 +1,10 @@
 .navbar {
 	width: 100%;
-	height: 5rem;
+	height: 7rem;
 	position: sticky;
 	top: 0px;
+	display: flex;
+	justify-content: center;
 
 /* w-full h-20 bg-emerald-800 sticky top-0 */
 }
@@ -15,6 +17,8 @@
 	padding-left: 1rem;
 	padding-right: 1rem;
 	height: 100%;
+	justify-contents: center;
+	align-items: center;
 /* container mx-auto px-4 h-fill */
 }
 
@@ -22,7 +26,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	width: 100%;
+	width: 800px;
 }
 
 .flex_box a {
@@ -43,6 +47,8 @@
 	justify-content: space-evenly;
 	align-items: center;
 	height: 100%;
+	border: 2px solid rgba(55, 55, 55, 200);
+	border-radius: 25px;
 }
 
 .links li {
@@ -56,4 +62,10 @@
 .links li:hover {
 	color: black;
 	background: white;
+	border-radius: 25px;
 }
+
+.links li a:hover {
+	text-decoration: none;
+}
+
