@@ -8,9 +8,46 @@
 	flex-direction: column;
 }
 
-.item {
+.item1 {
 	background-color: blue;
 	width: 200px;
 	height: 200px;
 	margin: 25px;
+
+	/* text align */
+	text-align: left;
+
+}
+
+.item2 {
+	background-color: blue;
+	width: 200px;
+	height: 200px;
+	margin: 25px;
+
+	/* text align */
+	text-align: right;
+}
+
+.item3 {
+	background-color: blue;
+	width: 200px;
+	height: 200px;
+	margin: 25px;
+
+	/* text align */
+
+	text-align: center;
+	vertical-align: center;
+}
+
+.item4 {
+	background-color: blue;
+	width: 200px;
+	height: 200px;
+	margin: 25px;
+
+	/* text align */
+
+	text-align: justify-all;
 }
