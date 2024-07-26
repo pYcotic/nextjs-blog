@@ -1,8 +1,28 @@
+'use client'
+
 import Image from "next/image";
 import profilePic from "../../../public/images/profile.jpeg";
 import styles from "./index.module.css";
+import { useEffect, useState } from "react";
+
+type ProgrammingLanguage = {
+	id: number;
+	pgrm_lang_name: string;
+	date_started: string;
+};
 
 export default function Profile() {
+
+	const [languages, setLanguages] = useState<ProgrammingLanguage[]>([]);
+
+	useEffect(() => {
+		async function fetchLanuages() {
+			const response = await fetch('/api/languages');
+			const data: ProgrammingLanguage[] = await response.json();
+		}
+		fetchLanuages();
+	}, []);
+
 	return (
 		<>
 			<div className={styles.profile}>
@@ -20,22 +40,11 @@ export default function Profile() {
 					<div className={styles.profileInfo}>
 						<p>What I am currently doing:</p>
 						<ul>
-							<li>
-								<p>Student</p>
-							</li>
-							<p>I an enrolled at the University of London, I Am due to finish the degree in October 2025.</p>
-							<li>
-								<p>Software Developer</p>
-							</li>
-							<p>I am using the following technologies:</p>
-							<p>Languages:</p>
-							<ol>
-								<li>C++</li>
-							</ol>
-							<p>Frameworks:</p>
-							<ol>
-								<li>Projucer</li>
-							</ol>
+							{languages.map((language) => (
+								<li key={language.id}>
+									{language.pgrm_lang_name}
+								</li>
+							))}
 						</ul>
 					</div>
 				</div>
